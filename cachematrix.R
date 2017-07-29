@@ -62,7 +62,7 @@ cacheSolve <- function(x, ...) {
      #if cached inverse doesn't exist, get matrix, calculate its inverse and cache it.
      message("no chached inverse found, calculating inverse")
      mat <- x$getm()
-     #NOTE: no local checking that that mtrx is invertible.
+     #NOTE: no local checking that that mat is invertible 
      invmat <- solve(mat, ...)
      #store the inverse into a cache.
      x$setinv(invmat)
