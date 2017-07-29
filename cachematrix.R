@@ -12,16 +12,15 @@
 #---------------------------------------------------------------------------------------#
 makeCacheMatrix <- function(x = matrix()) {
 
-     #invx stores the inverse of x Initialize to NULL. 
-     #This assures correct behavior when makeCacheMatix is called directly
-     #with a matrix as an argument.
+     #invx stores the inverse of matrix x. initialize to NULL 
+     #to assure correct behavior, by removing stale values.
      invx <- NULL
      
      list(
           #set matrix x (can be used to override initial matrix)
           setm = function(y=matrix()) {
                x <<- y
-               invx <<- NULL #when a new matrix is set, make sure invx is nulled!
+               invx <<- NULL #make sure invx is nulled when a new matrix is set!
           },
           
           #return matrix m
